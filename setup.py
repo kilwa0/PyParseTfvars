@@ -9,5 +9,4 @@ setup(
    author='kilwa0',
    author_email='kilwacero@gmail.com',
    packages=['parsetfvars'],  # same as name
-   install_requires=['re'],  # external packages as dependencies
 )
