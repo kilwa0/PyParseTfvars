@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import re
+import json
 
 
 class ParseTfvars:
@@ -31,3 +32,11 @@ class ParseTfvars:
         lt = self.simpleline(var)
         return list(re.sub('"', '', re.sub(r'(^\[|\]$)', '', re.sub(r'\s', '',
                     lt[0]).replace("%s=" % var, ""))).split(","))
+
+    def mp(self, var):
+        mp = self.simpleline(var)
+        var = json.loads(re.sub(r'(,)(?!.*\1)', '', re.sub(r'\]', '],',
+                         re.sub(' ', '', re.sub(r'\=', ':', re.sub(r'\=',
+                                ':', mp[0], count=1
+                                ).split(':')[1]), count=1))))
+        return var
