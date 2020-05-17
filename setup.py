@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
    name='PyParseTfvars',
-   version='0.1',
+   version='0.2',
    description="""
     Reads tfvars file and export
     value to be userd by python""",
